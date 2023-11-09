@@ -1,0 +1,23 @@
+.tooltip {
+  position: absolute;
+  text-align: center;
+  min-width: 150px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dot {
+  stroke: #fff;
+}
+
+.axis-label {
+  fill: #000;
+  font-size: 14px;
+  font-family: sans-serif;
+}

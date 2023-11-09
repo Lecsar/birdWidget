@@ -1,0 +1,17 @@
+.filterPanel {
+  display: grid;
+  grid-row-gap: 8px;
+}
+
+.filterName {
+  margin: 0;
+}
+
+.label {
+  margin-right: 4px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+}
