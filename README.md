@@ -36,7 +36,6 @@ By default, the application uses fake data to allow for quick and offline develo
 
    ```javascript
    localStorage.setItem("useRealApi", true);
-   ``;
    ```
 
 3. Refresh the page to see the changes and start using real data from the API.
