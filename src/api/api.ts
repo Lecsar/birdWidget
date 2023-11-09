@@ -1,7 +1,7 @@
 import { TaxiTripResponse } from "./api.types";
 import { fakeApiResponse } from "./fakeData";
 
-import { USE_FAKE_API, API_TOKEN } from "../constants";
+import { USE_REAL_API, API_TOKEN } from "../constants";
 
 function fakeApiGetTaxiTripsInfo(): Promise<TaxiTripResponse> {
   return new Promise((res) =>
@@ -23,6 +23,6 @@ function getTaxiTripsInfo() {
   });
 }
 
-export const apiGetTaxiTripsInfo = USE_FAKE_API
-  ? fakeApiGetTaxiTripsInfo
-  : getTaxiTripsInfo;
+export const apiGetTaxiTripsInfo = USE_REAL_API
+  ? getTaxiTripsInfo
+  : fakeApiGetTaxiTripsInfo;
