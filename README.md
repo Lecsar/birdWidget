@@ -1,5 +1,9 @@
 # Distance and Tips Dashboard
 
+https://github.com/Lecsar/birdWidget/assets/32493146/642bc252-7cc0-4af3-b6c3-b105e98d9fd2
+
+
+
 ## Introduction
 The Distance and Tips Dashboard visualizes the relationship between the distance of taxi trips and the tips given by passengers. This tool helps uncover trends and insights into how the length of a trip might affect tipping behavior.
 
