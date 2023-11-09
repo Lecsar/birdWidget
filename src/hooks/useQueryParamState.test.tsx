@@ -2,10 +2,8 @@ import { render, act, screen } from "@testing-library/react";
 import { useQueryParamState } from "./useQueryParamState";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import React from "react";
 
-// Создаем функциональный компонент для тестирования хука
-function TestComponent({ paramKey }) {
+function TestComponent({ paramKey }: { paramKey: string }) {
   const [paramValue, setParamValue] = useQueryParamState(paramKey);
 
   return (
@@ -29,15 +27,12 @@ describe("useQueryParamState", () => {
       </Router>
     );
 
-    // Проверяем начальное значение из URL
     expect(screen.getByTestId("paramValue").textContent).toBe("initial");
 
-    // Обновляем значение
     act(() => {
       screen.getByText("Set New Value").click();
     });
 
-    // Проверяем новое значение
     expect(screen.getByTestId("paramValue").textContent).toBe("newValue");
     expect(history.location.search).toBe("?param=newValue");
   });
@@ -53,15 +48,12 @@ describe("useQueryParamState", () => {
       </Router>
     );
 
-    // Проверяем начальное значение
     expect(screen.getByTestId("paramValue").textContent).toBe("something");
 
-    // Очищаем значение
     act(() => {
       screen.getByText("Clear Value").click();
     });
 
-    // Проверяем, что значение было очищено
     expect(screen.getByTestId("paramValue").textContent).toBe("");
     expect(history.location.search).toBe("");
   });

@@ -1,17 +1,28 @@
 import { TaxiTripResponse } from "./api.types";
-import { fakeData } from "./fakeData";
+import { fakeApiResponse } from "./fakeData";
 
-export const apiGetTaxiTripsInfo = (): Promise<TaxiTripResponse> => {
+import { USE_FAKE_API, API_TOKEN } from "../constants";
+
+function fakeApiGetTaxiTripsInfo(): Promise<TaxiTripResponse> {
   return new Promise((res) =>
     setTimeout(() => {
-      const response: TaxiTripResponse = {
-        data: fakeData,
-        rows: fakeData.length,
-        rows_before_limit_at_least: 1,
-        meta: [],
-        statistics: {} as any,
-      };
-      res(response);
+      res(fakeApiResponse);
     }, 1500)
   );
-};
+}
+
+function getTaxiTripsInfo() {
+  return fetch(
+    `https://api.tinybird.co/v0/pipes/yellow_tripdata_2017_pipe.json?token=${API_TOKEN}`
+  ).then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+
+    return Promise.reject(res);
+  });
+}
+
+export const apiGetTaxiTripsInfo = USE_FAKE_API
+  ? fakeApiGetTaxiTripsInfo
+  : getTaxiTripsInfo;

@@ -1,6 +1,4 @@
-import React from "react";
-
-import { queryParamTrueValue } from "../dictionary";
+import { queryParamTrueValue } from "../constants";
 
 interface Props {
   id: string;

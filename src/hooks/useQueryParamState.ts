@@ -35,7 +35,7 @@ export function useQueryParamState(
         search: newQueryParams.toString(),
       });
     },
-    [location.search, location.pathname, key]
+    [location.search, location.pathname, history, key]
   );
 
   return [paramValue, setQueryParam];

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 import { TaxiTripData } from "./api/api.types";
 import { useQueryParamState } from "./hooks/useQueryParamState";

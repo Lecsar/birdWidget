@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import { useDataLoader } from "./hooks/useDataLoader";
@@ -15,7 +14,7 @@ export function App() {
   }
 
   if (loading === "error") {
-    return <h1>Error</h1>;
+    return <h1>Error in receiving data</h1>;
   }
 
   if (loading === "idle") {

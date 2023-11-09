@@ -1,7 +1,7 @@
 import { TaxiTripData } from "../api/api.types";
-import { paymentTypeDictionary, queryParamTrueValue } from "../dictionary";
+import { paymentTypeDictionary, queryParamTrueValue } from "../constants";
 
-function convertQueryParamToNum(value: string): number | undefined {
+export function convertQueryParamToNum(value: string): number | undefined {
   if (!value) return;
 
   const numValue = Number(value);
@@ -12,7 +12,7 @@ const paymentTypeValues = Object.values(paymentTypeDictionary).map(
   (i) => i.value
 );
 
-function convertPaymentTypeToNum(value: string): number | undefined {
+export function convertPaymentTypeToNum(value: string): number | undefined {
   const numValue = convertQueryParamToNum(value);
 
   if (typeof numValue !== "number") return;
@@ -20,7 +20,7 @@ function convertPaymentTypeToNum(value: string): number | undefined {
   return paymentTypeValues.includes(numValue) ? numValue : undefined;
 }
 
-function convertStringToBoolean(value: string): boolean {
+export function convertStringToBoolean(value: string): boolean {
   return value === queryParamTrueValue;
 }
 

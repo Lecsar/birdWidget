@@ -1,6 +1,4 @@
-import React from "react";
-
-import { paymentTypeDictionary } from "../dictionary";
+import { paymentTypeDictionary } from "../constants";
 
 const options = [{ label: "Any", value: "" }].concat(
   Object.values(paymentTypeDictionary).map((i) => ({

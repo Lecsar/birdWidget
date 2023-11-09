@@ -1,6 +1,6 @@
-import { TaxiTripData } from "./api.types";
+import { TaxiTripData, TaxiTripResponse } from "./api.types";
 
-export const fakeData: TaxiTripData[] = [
+const fakeData: TaxiTripData[] = [
   {
     vendorid: 1,
     tpep_pickup_datetime: "2017-01-22 17:25:34",
@@ -382,3 +382,84 @@ export const fakeData: TaxiTripData[] = [
     total_amount: 9.8,
   },
 ];
+
+export const fakeApiResponse: TaxiTripResponse = {
+  meta: [
+    {
+      name: "vendorid",
+      type: "Int16",
+    },
+    {
+      name: "tpep_pickup_datetime",
+      type: "DateTime",
+    },
+    {
+      name: "tpep_dropoff_datetime",
+      type: "DateTime",
+    },
+    {
+      name: "passenger_count",
+      type: "Int16",
+    },
+    {
+      name: "trip_distance",
+      type: "Float32",
+    },
+    {
+      name: "ratecodeid",
+      type: "Int16",
+    },
+    {
+      name: "store_and_fwd_flag",
+      type: "String",
+    },
+    {
+      name: "pulocationid",
+      type: "Int32",
+    },
+    {
+      name: "dolocationid",
+      type: "Int32",
+    },
+    {
+      name: "payment_type",
+      type: "Int16",
+    },
+    {
+      name: "fare_amount",
+      type: "String",
+    },
+    {
+      name: "extra",
+      type: "Float32",
+    },
+    {
+      name: "mta_tax",
+      type: "Float32",
+    },
+    {
+      name: "tip_amount",
+      type: "Float32",
+    },
+    {
+      name: "tolls_amount",
+      type: "Float32",
+    },
+    {
+      name: "improvement_surcharge",
+      type: "Float32",
+    },
+    {
+      name: "total_amount",
+      type: "Float32",
+    },
+  ],
+  rows: 20,
+  rows_before_limit_at_least: 16384,
+  statistics: {
+    elapsed: 0.004126224,
+    rows_read: 16384,
+    bytes_read: 1203103,
+  },
+  data: fakeData,
+};

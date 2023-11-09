@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
 import "./ScatterPlot.css";
@@ -64,7 +64,7 @@ export const ScatterPlot = ({ trips, width = 600, height = 400 }: Props) => {
 
       const tooltip = d3.select("body").append("div").attr("class", "tooltip");
 
-      const mouseover = (event, d: DataPoint) => {
+      const mouseover = (event: any, d: DataPoint) => {
         tooltip
           .html(`Distance: ${d.trip_distance} - Tip: $${d.tip_amount}`)
           .style("opacity", 1)
@@ -72,7 +72,7 @@ export const ScatterPlot = ({ trips, width = 600, height = 400 }: Props) => {
           .style("top", `${event.pageY + 10}px`);
       };
 
-      const mousemove = (event) => {
+      const mousemove = (event: any) => {
         tooltip
           .style("left", `${event.pageX + 10}px`)
           .style("top", `${event.pageY + 10}px`);
